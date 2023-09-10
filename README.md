@@ -110,3 +110,11 @@ Kevin Song | kmsong@uab.edu | Team Leader
 Zhandos Sembay | zsembay8@uab.edu | Team Member
 Radomir Slominski | rslom@uab.edu | Team Member
 Melissa Hall | hallma0@uab.edu | Team Member
+## Team Members
+
+|Name | Email | Role |
+----|--|--|
+| Kevin Song | kmsong@uab.edu | Team Leader  
+| Zhandos Sembay | zsembay8@uab.edu | Team Member
+| Radomir Slominski | rslom@uab.edu | Team Member
+| Melissa Hall | hallma0@uab.edu | Team Member
