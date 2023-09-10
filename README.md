@@ -104,12 +104,7 @@ output_directory/
 ## Results
 :exclamation: _If your project yielded or intends to yield some novel analysis, please include them in your readme. It can be named something other than results as well._ :exclamation:
 
-## Team Members
 
-Kevin Song | kmsong@uab.edu | Team Leader  
-Zhandos Sembay | zsembay8@uab.edu | Team Member
-Radomir Slominski | rslom@uab.edu | Team Member
-Melissa Hall | hallma0@uab.edu | Team Member
 ## Team Members
 
 |Name | Email | Role |
