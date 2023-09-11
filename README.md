@@ -5,7 +5,8 @@ Sepsis is a host response to an infecting pathogen, and early detection is criti
 
 ## Data
 
-Here we have trained a deep neural network on the PhysioNet sepsis dataset (N = 1.5M). Dataset includes 1.8% positive cases and at least 40 features such as vital signs, laboratory values, and demographic information.
+Here we have trained a deep neural network on the PhysioNet sepsis dataset (N = 1.5M). Dataset includes 1.8% positive cases and at least 40 features such as vital signs, laboratory values, and demographic information. 
+https://www.kaggle.com/datasets/salikhussaini49/prediction-of-sepsis?resource=download
 
 ## Usage
 
@@ -24,5 +25,5 @@ Our model was trained in Python using the Keras framework, and uses three feedfo
 | Radomir Slominski | rslom@uab.edu | Team Member
 | Melissa Hall | hallma0@uab.edu | Team Member
 
-AI.MED Laboratory
+AI.MED Laboratory, 
 University of Alabama at Birmingham
