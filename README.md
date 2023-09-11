@@ -1,109 +1,19 @@
-# DeepSepsis Team
-:exclamation: _This top heading should be the name of your project i.e. BiocSwirl or SNVariome. Anything between 2 exclamation marks is intended to be deleted. Any content that isn't a heading or an optional heading can be deleted as well. The structure of this readme is open to any creative changes, but the main components of Background/Data/Usage/Team Members should remain. You're free to add images and get creative about how you want your readme to look._ :exclamation:
-
-:exclamation: _The `configs` and `notebooks` directories are also optional. We recommend taking a look at [cookiecutter for datascience](https://github.com/drivendata/cookiecutter-data-science) or [cookiecutter for computational biology](https://github.com/drivendata/cookiecutter-data-science) to get ideas on structuring your projects. Also, use a `.gitignore` that fits the main programming language of your project._ :exclamation:
-
-## Table of Contents
-
-- [Template](#team-repo-template)
-    - [Background](#Background)
-    - [Data](#data)
-    - [Usage](#usage)
-        - [Installation](#installation)
-        - [Requirements](#requirements) _Can be named Dependencies as well_
-        - [Activate conda environment](#activate-conda-environment) _Optional_
-        - [Steps to run ](#steps-to-run) _Optional depending on project_
-            - [Step-1](#step-1)
-            - [Step-2](#step-2)
-    - [Results](#results) _Optional depending on project_
-    - [Team Members](#team-members)
+# PhLORENS: Physiological Learned Objective Response Emergency Notification System
 
 ## Background
-
-:exclamation: _Include background on the project, project description, and significance. This will be converted to your team's abstract by the end of the hackathon. This should be updated by Monday, August 1st to include feedback given._ :exclamation:
+Sepsis is a host response to an infecting pathogen, and early detection is critical in the ICU. Risk factors include AIDS, COPD, immunosuppressives, advanced cancer, and advanced age. In the United States., 1.7 million people develop sepsis annually, and 270,000 die from sepsis-related complications every year. Currently, sepsis costs the U.S. healthcare system about $24 billion annually, accounting for 13% of total healthcare system costs (Reyna, et al. 2019). A safeguard warning system could be effective in delaying the onset of sepsis, which can lead to a 3.6 to 9.9% increase in patient mortality for each hour of the infection (Kumar et al, 2006).
 
 ## Data
 
-:exclamation: _Discuss the data you used and how it can be accessed._ :exclamation:
+Here we have trained a deep neural network on the PhysioNet sepsis dataset (N = 1.5M). Dataset includes 1.8% positive cases and at least 40 features such as vital signs, laboratory values, and demographic information.
 
 ## Usage
 
-:exclamation: _How will someone not involved in your project be able to run the code or use it._ :exclamation:
-
-### Installation
-
-:exclamation: _If installation is required, please mention how to do so here._ :exclamation:
-
-Installation simply requires fetching the source code. Following are required:
-
-- Git
-
-To fetch source code, change in to directory of your choice and run:
-
-```sh
-git clone -b main \
-    git@github.com:u-brite/team-repo-template.git
-```
-
-### Requirements
-:exclamation: _Note any software used (including Python or R packages), operating system requirements, etc. and its version so that your project is reproducible. It does not have to be in the below format_ :exclamation:
-
-*OS:*
-
-Currently works only in Linux OS. Docker versions may need to be explored later to make it useable in Mac (and
-potentially Windows).
-
-*Tools:*
-
-- Anaconda3
-    - Tested with version: 2020.02
-
-### Activate conda environment
-:exclamation: _Optional: Depends on project._ :exclamation:
-
-Change in to root directory and run the commands below:
-
-```sh
-# create conda environment. Needed only the first time.
-conda env create --file configs/environment.yaml
-
-# if you need to update existing environment
-conda env update --file configs/environment.yaml
-
-# activate conda environment
-conda activate testing
-```
-
-### Steps to run
-:exclamation: _Optional: Depends on project._ :exclamation:
-
-#### Step 1
-
-```sh
-python src/data_prep.py -i path/to/file.tsv -O path/to/output_directory
-```
-
-#### Step 2
-
-```sh
-python src/model.py -i path/to/parsed_file.tsv -O path/to/output_directory
-```
-
-Output from this step includes -
-
-```directory
-output_directory/
-├── parsed_file.tsv               <--- used for model
-├── plot.pdf- Plot to visualize data
-└── columns.csv - columns before and after filtering step
-
-```
-
-
+We developed an application for research use, called PhLORENS (Physiological Learned Objective Response Emergency Notification System) that can be used to provide reporting to predict the development of ICU emergencies (i.e., code blue events). In addition to sepsis prediction, we could potentially refine our model and create a safeguard warning system for nursing and medical staff to monitor the development of additional clinical objectives. The link to the application is available here: [PhLORENS](https://phlorens.streamlit.app)
 
 ## Results
-:exclamation: _If your project yielded or intends to yield some novel analysis, please include them in your readme. It can be named something other than results as well._ :exclamation:
 
+Our model was trained in Python using the Keras framework, and uses three feedforward, fully connected layers of 512 nodes, as well as LeakyReLU activation functions (to propagate non-zero gradients) and L1 regularization. After pre-processing the data with patient timeseries censoring, outlier removal, and median value imputation, we trained the model using majority class undersampling (0.1% of nonsepsis data to obtain a 1.1 : 1 class balance) and 80:20 training/validation split. After testing on 778,000 test samples, we achieved a macro average F1 score of 73%. The most important feature correlated with the development of sepsis in the ICU was the troponin biomarker, an indicator of (cardiovascular) muscle damage.
 
 ## Team Members
 
@@ -113,3 +23,6 @@ output_directory/
 | Zhandos Sembay | zsembay8@uab.edu | Team Member
 | Radomir Slominski | rslom@uab.edu | Team Member
 | Melissa Hall | hallma0@uab.edu | Team Member
+
+AI.MED Laboratory
+University of Alabama at Birmingham
