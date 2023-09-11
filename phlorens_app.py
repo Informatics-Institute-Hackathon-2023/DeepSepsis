@@ -6,7 +6,7 @@ import numpy as np
 
 st.title('PhLORENS App')
 st.header('_Physiological Learned Objective Response Emergency Notification System_')
-
+st.text('For research use only')
 st.subheader('Demo')
 
 model = load_model('model/DeepSepsis.h5')
@@ -18,7 +18,6 @@ columns_name = ['Hour', 'HR', 'O2Sat', 'Temp', 'SBP', 'MAP', 'DBP', 'Resp', 'EtC
        'Fibrinogen', 'Platelets', 'Age', 'Gender', 'Unit1', 'Unit2',
        'HospAdmTime', 'ICULOS']
 
-#risk_levels = {0.2: 'Low Sepsis risk', 0.5: 'Medium Sepsis risk'}
 
 def process_patient_data(patient_file, patient_name):
     patient_data = np.loadtxt(patient_file, delimiter=",")
@@ -28,9 +27,9 @@ def process_patient_data(patient_file, patient_name):
     structured_data
     probability = model.predict(patient_data)
     probability[0][0]
-    if probability <= 0.2:
+    if probability <= 0.5:
         st.success(f'Low Sepsis risk for {patient_name}!', icon="✅")
-    elif probability <= 0.5:
+    elif probability <= 0.8:
         st.warning(f'Medium Sepsis risk for {patient_name}!', icon="⚠️")
     else:
         st.error(f'High Sepsis risk for {patient_name}!', icon="🚨")
